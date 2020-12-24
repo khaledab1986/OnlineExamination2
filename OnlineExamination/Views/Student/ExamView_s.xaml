@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+
+             x:Class="OnlineExamination.Views.Student.ExamView_s"
+                          Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#1E48A6">
+      <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     BackgroundColor="#1E48A6">
+
+
+
+
+         <StackLayout AbsoluteLayout.LayoutBounds="0,0"
+                      HorizontalOptions="FillAndExpand"
+                      AbsoluteLayout.LayoutFlags="PositionProportional"
+                      BackgroundColor="#1E48A6"
+                      Margin="0,5,0,0"
+                      Padding="0">
+             <Grid Padding="5" VerticalOptions="Center">
+                 <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="auto"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="auto"/>
+               
+                 </Grid.ColumnDefinitions>
+                   <Image Source="teachericons.png"
+                          Grid.Column="0"
+                          Aspect="AspectFit"
+                          VerticalOptions="Center"
+                          HeightRequest="30" />
+                   <Label Text=""
+                          Grid.Column="1"
+                          x:Name="Stud_name"
+                          TextColor="#F7F7F7"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+
+                   <!--<ImageButton Source="backicon.png"
+                                Grid.Column="2"
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                Clicked="ImageButton_Clicked"/>-->
+
+             </Grid>
+             <BoxView HorizontalOptions="FillAndExpand"
+                          BackgroundColor="#F1FAFF"
+                          HeightRequest="0.6"
+                          Margin="0,0,0,0"/>
+         </StackLayout>
+
+         <forms:AnimationView x:Name="examjson" 
+	                          Animation="examjson2.json" 
+	                          AutoPlay="True"
+                              IsVisible="true"
+                              Loop="True"
+                              WidthRequest="300"
+                              HeightRequest="300"
+                              AbsoluteLayout.LayoutBounds="0.5,0.5"
+                              AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+         
+         <ScrollView AbsoluteLayout.LayoutBounds="0,0.5,1,0.8"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="Transparent">
+             <StackLayout x:Name="stk">
+
+             </StackLayout>
+         </ScrollView>
+
+         <Frame AbsoluteLayout.LayoutBounds="0,1,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#2145A6"
+                Visual="Default"
+                Padding="3">
+         </Frame>
+     </AbsoluteLayout>
+
+</ContentPage>

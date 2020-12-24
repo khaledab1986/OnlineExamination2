@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="OnlineExamination.Views.techer.Course"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False">
+ <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 BackgroundColor="#F7F7F7">
+     <Frame AbsoluteLayout.LayoutBounds="0,0,1,0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#1E48A6"
+          Padding="5"
+            CornerRadius="0"
+            HasShadow="true">
+         <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+             <Image Source="teachericons.png"
+                    Aspect="AspectFit"
+                    VerticalOptions="Center"
+                   HeightRequest="30" />
+             <Label Text=""
+                    x:Name="nickname"
+                    TextColor="#F7F7F7"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    FontFamily="{StaticResource Raleway}"/>
+         </StackLayout>
+     </Frame>
+
+     <forms:AnimationView x:Name="stud" 
+	                        Animation="stud.json" 
+	                        AutoPlay="True"
+                            Loop="True"
+                            WidthRequest="300"
+                            HeightRequest="300"
+                            AbsoluteLayout.LayoutBounds="0.5,0.5,300,300"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            Margin="5"/>
+
+     <ScrollView AbsoluteLayout.LayoutBounds="0,0.5,1,0.7"
+                 AbsoluteLayout.LayoutFlags="All"
+                 BackgroundColor="Transparent">
+         <StackLayout x:Name="stk" Margin="10"
+                      > 
+             <Button BackgroundColor="White"
+                     CornerRadius="10"
+                     BorderColor="#063AC4"
+                     BorderWidth="1"
+                     Text="Programing One"
+                     FontSize="Large"
+                     FontFamily="Raleway"
+                     TextColor="#2145A6"/>
+         </StackLayout>
+     </ScrollView>
+            <!--<yummy:PancakeView x:Name="gradient2"
+                               BackgroundGradientStartPoint="0.5,0"
+                               BackgroundGradientEndPoint="0.5,1"
+                               CornerRadius="10"
+
+                               AbsoluteLayout.LayoutBounds="0.5,0.2,0.8,0.1"
+                               AbsoluteLayout.LayoutFlags="All">
+
+                <yummy:PancakeView.BackgroundGradientStops>
+                    <yummy:GradientStopCollection>
+                        <yummy:GradientStop Color="#E8E8E8" Offset="0" />
+                        <yummy:GradientStop Color="#E8E8E8" Offset="1" />
+                    </yummy:GradientStopCollection>
+                </yummy:PancakeView.BackgroundGradientStops>
+ 
+            </yummy:PancakeView>-->
+
+ </AbsoluteLayout>
+</ContentPage>

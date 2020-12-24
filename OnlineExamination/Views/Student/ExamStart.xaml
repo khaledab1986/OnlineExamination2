@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="OnlineExamination.Views.Student.ExamStart"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+
+     <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+         <StackLayout AbsoluteLayout.LayoutBounds="0,0"
+                          HorizontalOptions="FillAndExpand"
+                          AbsoluteLayout.LayoutFlags="PositionProportional"
+                          BackgroundColor="#1E48A6"
+                          Margin="0,0,0,0"
+                          Padding="0">
+              <Grid Padding="5" VerticalOptions="Center">
+                 <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="auto"/>
+                 </Grid.ColumnDefinitions>
+                   <Label Text=""
+                          Grid.Column="0"
+                          x:Name="qus_Name"
+                          TextColor="#F7F7F7"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                                     <ImageButton Source="backicon.png"
+                                Grid.Column="1"
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                                  IsVisible="false"
+                                VerticalOptions="Center"
+                                Clicked="ImageButton_Clicked"/>
+
+                  </Grid>
+                 <BoxView HorizontalOptions="FillAndExpand"
+                          BackgroundColor="#F1FAFF"
+                          HeightRequest="0.6"
+                          Margin="0,0,0,0"/>
+         </StackLayout>
+
+
+
+         <StackLayout BackgroundColor="White"
+                      Margin="5,0,5,0"
+                      AbsoluteLayout.LayoutBounds="0,0.21"
+                      AbsoluteLayout.LayoutFlags="PositionProportional"
+                      HorizontalOptions="FillAndExpand"
+                      Padding="5">
+                 <Label Text="what is your favorite in TV channel I will write more line for this question where I go school what is your favorite in TV channel I will write more line for this question where I go school?"
+                        BackgroundColor="White"
+                        HeightRequest="100"
+                         x:Name="QuestionText"
+                        VerticalTextAlignment="Center"
+                         Margin="5"
+                        VerticalOptions="Center"/>
+
+                </StackLayout>
+
+         <Frame AbsoluteLayout.LayoutBounds="0.5,0.1"
+                BackgroundColor="#1E48A6"
+                WidthRequest="70"
+                HeightRequest="70"
+                CornerRadius="140"
+                HasShadow="True"
+                Padding="0"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+             <Label x:Name="ETimer"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="White"
+                    Text=""
+                    FontSize="14"/>
+         </Frame>
+
+         <ScrollView AbsoluteLayout.LayoutBounds="0,0.76,1,0.55"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="Transparent">
+         <StackLayout x:Name="stk_answer">
+
+                </StackLayout>
+             </ScrollView>
+         <Grid  AbsoluteLayout.LayoutBounds="0,0.99,1,0.1"
+                     AbsoluteLayout.LayoutFlags="All"
+                ColumnSpacing="10"
+                BackgroundColor="Transparent">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="50*"/>
+                 <ColumnDefinition Width="50*"/>
+             </Grid.ColumnDefinitions>
+             <Button Text="Previous"
+                     Clicked="prb_but_Clicked"
+                     Margin="5"
+                     x:Name="prb_but"
+                     Grid.Column="0"
+                     BackgroundColor="#1E48A6"
+                     CornerRadius="10"
+                     TextColor="White"
+                     FontSize="17"/>
+             <Button Text="Next"
+                     Clicked="nxt_but_Clicked"
+                     IsVisible="true"
+                     Grid.Column="1"
+                     CornerRadius="10"
+                     x:Name="nxt_but"
+                     Margin="5"
+                     BackgroundColor="#1E48A6"
+                     TextColor="White"
+                     FontSize="17"/>
+             <Button Text="Finish"
+                     Clicked="finish_but_Clicked"
+                     Grid.Column="1"
+                     IsVisible="false"
+                     CornerRadius="10"
+                     x:Name="finish_but"
+                     Margin="5"
+                     BackgroundColor="DarkGreen"
+                     TextColor="White"
+                     FontSize="17"/>
+         </Grid>
+
+
+     </AbsoluteLayout>
+</ContentPage>

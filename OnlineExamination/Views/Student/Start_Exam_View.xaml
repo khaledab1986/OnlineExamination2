@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineExamination.Views.Student.Start_Exam_View"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+        <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+             <StackLayout AbsoluteLayout.LayoutBounds="0,0"
+                          HorizontalOptions="FillAndExpand"
+                          AbsoluteLayout.LayoutFlags="PositionProportional"
+                          BackgroundColor="#1E48A6"
+                          Margin="0,0,0,0"
+                          Padding="0">
+              <Grid Padding="5" VerticalOptions="Center">
+                 <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="auto"/>
+                 </Grid.ColumnDefinitions>
+                   <Label Text=""
+                          Grid.Column="0"
+                          x:Name="Exam_Name"
+                          TextColor="#F7F7F7"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                                     <ImageButton Source="backicon.png"
+                                Grid.Column="1"
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                Clicked="ImageButton_Clicked"/>
+
+                  </Grid>
+                 <BoxView HorizontalOptions="FillAndExpand"
+                          BackgroundColor="#F1FAFF"
+                          HeightRequest="0.6"
+                          Margin="0,0,0,0"/>
+         </StackLayout>
+
+             <Label Text=""
+                       x:Name="Exam_det"
+                       HorizontalTextAlignment="Center"
+                       FontSize="17"
+                       TextColor="#393939"
+                       AbsoluteLayout.LayoutBounds="0.5,0.2"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.5"
+                         AbsoluteLayout.LayoutFlags="PositionProportional">
+
+
+                <Grid Margin="5"  
+                      RowSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Button BackgroundColor="#1544A2"
+                            Text="01"
+                            FontSize="20"
+                            x:Name="dy1"
+                            WidthRequest="60"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Padding="0"
+                            CornerRadius="5"
+                            TextColor="White"/>
+                    <Button BackgroundColor="#1544A2"
+                            Text="02"
+                             FontSize="20"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Padding="0"
+                            x:Name = "h1"
+                            WidthRequest="60"
+                            CornerRadius="5"
+                            TextColor="White"/>
+                    <Button BackgroundColor="#1544A2"
+                            Text="03"
+                             FontSize="20"
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            x:Name="m1"
+                            Padding="0"
+                            WidthRequest="60"
+                            CornerRadius="5"
+                            TextColor="White"/>
+                    <Button BackgroundColor="#1544A2"
+                            Text="04"
+                             FontSize="20"
+                            Grid.Column="3"
+                            Grid.Row="0"
+                            Padding="0"
+                            x:Name="s1"
+                              WidthRequest="60"
+                            CornerRadius="5"
+                            TextColor="White"/>
+
+                    <Label BackgroundColor="Transparent"
+                            Text="Days"
+                            HorizontalOptions="Center"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Padding="0"
+                            TextColor="#88A8D8"
+                           FontSize="14"/>
+                    <Label BackgroundColor="Transparent"
+                            Text="Hours"
+                            HorizontalOptions="Center"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Padding="0"
+                            TextColor="#88A8D8"
+                           FontSize="14"/>
+                    <Label BackgroundColor="Transparent"
+                            Text="Minute"
+                            HorizontalOptions="Center"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Padding="0"
+                            TextColor="#88A8D8"
+                           FontSize="14"/>
+                    <Label BackgroundColor="Transparent"
+                            Text="Second"
+                            HorizontalOptions="Center"
+                            Grid.Column="3"
+                            Grid.Row="1"
+                            Padding="0"
+                            TextColor="#88A8D8"
+                           FontSize="14"/>
+ 
+                </Grid>
+
+            </StackLayout>
+            <Button Text="Start Exam"
+                    x:Name="StartButton"
+                    BackgroundColor="#1544A2"
+                    TextColor="White"
+                    AbsoluteLayout.LayoutBounds="0.5,0.8"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    CornerRadius="15"
+                    Clicked="StartButton_Clicked"
+                    Padding="30,0,30,0"/>
+        </AbsoluteLayout>
+</ContentPage>

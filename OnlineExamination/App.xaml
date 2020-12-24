@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OnlineExamination.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="Raleway"  x:TypeArguments="x:String" Android="Raleway-Regular.ttf#Open Sans" />
+            <OnPlatform x:Key="Raleway2"  x:TypeArguments="x:String" Android="Raleway-Bold.ttf#Open Sans" />
+
+         </ResourceDictionary>
+    </Application.Resources>
+
+ 
+</Application>

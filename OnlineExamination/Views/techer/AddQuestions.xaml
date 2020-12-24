@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineExamination.Views.techer.AddQuestions"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#EFEFEF">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Fill">
+        <Frame AbsoluteLayout.LayoutBounds="0,0,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#1E48A6"
+                Padding="5"
+                CornerRadius="0"
+                Visual="Default"
+                HasShadow="True">
+              <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+
+                   <Label Text="Question -1"
+                           x:Name="QuestionNo"
+                          TextColor="#F7F7F7"
+                          FontSize="Medium"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                   <ImageButton Source="backicon.png"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                HeightRequest="40"
+                                Clicked="ImageButton_Clicked"/>
+              </StackLayout>
+         </Frame>
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5,0.9,0.93,0.88"
+                    AbsoluteLayout.LayoutFlags="All">
+            <StackLayout BackgroundColor="Transparent">
+                
+      
+                
+               <StackLayout Orientation="Horizontal">
+                    <Picker x:Name="ExamType"
+                        VerticalOptions="Center"
+                        Title="Select a Type of Exam"
+                        BackgroundColor="Transparent"
+                        FontFamily="Arial"
+                        FontSize="Medium"
+                        HorizontalOptions="FillAndExpand"
+                            SelectedIndexChanged="ExamType_SelectedIndexChanged"
+                        TitleColor="#2145A6">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Test1</x:String>
+                                <x:String>Test2</x:String>
+                                <x:String>Final</x:String>
+                            </x:Array>
+                       </Picker.ItemsSource>
+                </Picker>
+
+                    <Entry BackgroundColor="Transparent"
+                           Placeholder="Mark"
+                           TextColor="#2E2E2E"
+                           Keyboard="Numeric"
+                           VerticalOptions="Center"
+                           x:Name="mark"
+                           PlaceholderColor="#2145A6"
+                           WidthRequest="100"/> 
+
+                 
+
+               </StackLayout>
+
+                <Frame BackgroundColor="White"
+                       HasShadow="False"
+                       HorizontalOptions="FillAndExpand"
+                       HeightRequest="120"
+                       BorderColor="#BFBFBF"
+                       Padding="0">
+                 <Editor Placeholder="Enter Question"
+                        PlaceholderColor="#707070"
+                        BackgroundColor="White"
+                        HeightRequest="100"
+                         x:Name="QuestionText"
+                         Margin="5"
+                        VerticalOptions="Center"/>
+
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                       BorderColor="#BFBFBF"
+                       Padding="7"
+                       HasShadow="False"
+                       HeightRequest="250"
+                       VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Button BackgroundColor="#F8DF1D"
+                                Text="Add answers"
+                                TextColor="#212121"
+                                HorizontalOptions="Start"
+                                x:Name="Addanswers"
+                                Clicked="Addanswers_Clicked"/>
+                        <StackLayout x:Name="stk_answer">
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!--<StackLayout Orientation="Horizontal"
+                            >
+                     <Label Text="Mark"
+                            TextColor="#1E48A6"
+                            FontSize="Large"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"/>
+                    <Entry BackgroundColor="White"
+                           Placeholder="0"
+                           TextColor="#1E48A6"
+                           x:Name="mark"
+                           PlaceholderColor="#BCBCBC"
+                           WidthRequest="100"/> 
+
+                </StackLayout>-->
+
+                <Button BackgroundColor="#1B4BA6"
+                        Margin="20"
+                        CornerRadius="20"
+                        FontSize="Medium"
+                        Text="Add Questions"
+                        TextColor="White"
+                        x:Name="saveBut"
+                        Clicked="saveBut_Clicked"/>
+           
+            </StackLayout>
+        </ScrollView>
+    </AbsoluteLayout>
+     
+</ContentPage>

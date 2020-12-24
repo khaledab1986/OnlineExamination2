@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="OnlineExamination.Views.techer.QuestionsBank1"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#2145A6">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+          <Frame AbsoluteLayout.LayoutBounds="0,0,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#1E48A6"
+                Padding="5"
+                CornerRadius="0"
+                Visual="Default"
+                HasShadow="True">
+              <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                   <Image Source="BoxIcon2.png"
+                          Aspect="AspectFit"
+                          VerticalOptions="Center"
+                          HeightRequest="30" />
+                   <Label Text="Questions Bank"
+                          x:Name="CourseName"
+                          TextColor="#F7F7F7"
+                          FontSize="Medium"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                   <ImageButton Source="backicon.png"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                HeightRequest="40"
+                                Clicked="ImageButton_Clicked"/>
+              </StackLayout>
+         </Frame>
+
+          <Picker x:Name="ExamType"
+                  AbsoluteLayout.LayoutBounds="0,0.1"
+                  AbsoluteLayout.LayoutFlags="PositionProportional"
+                  WidthRequest="250"
+                  Title="Select a Type of Exam"
+                  BackgroundColor="Transparent"
+                  FontFamily="Arial"
+                  FontSize="Medium"
+                  HorizontalOptions="Start"
+                 SelectedIndexChanged="myPickerSelectedIndexChanged"
+                  TextColor="White"
+                  TitleColor="White">
+                  <Picker.ItemsSource>
+                      <x:Array Type="{x:Type x:String}">
+                                <x:String>Test1</x:String>
+                                <x:String>Test2</x:String>
+                                <x:String>Final</x:String>
+                     </x:Array>
+                  </Picker.ItemsSource>
+          </Picker>
+
+
+         <ScrollView AbsoluteLayout.LayoutBounds="0,1,1,0.8"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="Transparent">
+             <StackLayout x:Name="stk">
+                  <forms:AnimationView x:Name="examjson" 
+	                                   Animation="examjson2.json" 
+	                                   AutoPlay="True"
+                                       IsVisible="true"
+                                       Loop="True"
+                                       WidthRequest="300"
+                                       HeightRequest="300"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+             </StackLayout>
+         </ScrollView>
+
+
+         <!--<Frame BackgroundColor="#EAEAEA"
+               AbsoluteLayout.LayoutBounds="0,1,1,0.1"
+               AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+               BorderColor="#CECECE"
+               Padding="0">
+
+        </Frame>-->
+
+         <!--<ImageButton  Source="AddIcon_button.png"
+                       BackgroundColor="Transparent"
+                       x:Name="Addbut"
+                       Clicked="Addbut_Clicked"
+               AbsoluteLayout.LayoutBounds="0.5,0.99,0.2,0.1"
+               AbsoluteLayout.LayoutFlags="All">
+
+
+
+
+        </ImageButton>-->
+        <forms:AnimationView x:Name="examjsonn"
+                             OnClick="examjson_OnClick"
+	                         Animation="question2.json" 
+	                         AutoPlay="True"
+                             IsVisible="true"
+                             Loop="True"
+                             WidthRequest="80"
+                             HeightRequest="80"
+                             AbsoluteLayout.LayoutBounds="0.99,0.09"
+                             AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>
+ 
+</ContentPage>

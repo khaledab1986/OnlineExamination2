@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lo="clr-namespace:OnlineExamination"
+             x:Class="OnlineExamination.Views.techer.AddExam"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#F7F7F7">
+     <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     BackgroundColor="#F7F7F7">
+         <Frame AbsoluteLayout.LayoutBounds="0,0,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#1E48A6"
+                Padding="5"
+                CornerRadius="0"
+                Visual="Default"
+                HasShadow="True">
+              <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                   <Image Source="courseicon.png"
+                          Aspect="AspectFit"
+                          VerticalOptions="Center"
+                          HeightRequest="30" />
+                   <Label Text="Add Exam"
+                          TextColor="#F7F7F7"
+                          FontSize="17"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                   <ImageButton Source="backicon.png"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                HeightRequest="40"
+                                Clicked="ImageButton_Clicked"/>
+              </StackLayout>
+         </Frame>
+         <Picker x:Name="ExamType"
+                     AbsoluteLayout.LayoutBounds="0.1,0.1,0.8,0.1"
+                     AbsoluteLayout.LayoutFlags="All"
+                        Title="Select a Type of Exam"
+                        BackgroundColor="Transparent"
+                        FontFamily="Arial"
+                        FontSize="Medium"
+                        HorizontalOptions="FillAndExpand"
+                            SelectedIndexChanged="ExamType_SelectedIndexChanged"
+                        TitleColor="#2145A6">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Test1</x:String>
+                                <x:String>Test2</x:String>
+                                <x:String>Final</x:String>
+                            </x:Array>
+                       </Picker.ItemsSource>
+                </Picker>
+
+
+         <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.42"
+                      AbsoluteLayout.LayoutFlags="PositionProportional"
+                      BackgroundColor="White"
+                      HorizontalOptions="FillAndExpand"
+                      Margin="5"
+                      lo:RoundCornersEffect.CornerRadius = "5">
+
+             <Editor Placeholder="Details :"
+                     Margin="5"
+                     x:Name="Detail"
+                     PlaceholderColor="#AAB0B8"
+                     BackgroundColor="White"/>
+
+
+             <Label Text="Date Of Exam"
+                    Margin="5"
+                    TextColor="#AAB0B8"
+                    FontSize="11"
+                    FontFamily="{StaticResource Raleway}"/>
+             <Grid Margin="25,0,25,0" RowSpacing="10">
+                  <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="auto"/>
+                          <ColumnDefinition Width="*"/>
+                     </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                         <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                     </Grid.RowDefinitions>
+                  <Label Text="Date :"
+                            Grid.Column="0"
+                            TextColor="#2145A6"
+                            VerticalOptions="Center"
+                            FontSize="13"
+                            Grid.Row="0"
+                            FontFamily="{StaticResource Raleway}"/>
+                  <DatePicker x:Name="dateExam"
+                                 Format="D"
+                                 Grid.Column="1"
+                                 BackgroundColor="Transparent"
+                                 VerticalOptions="Center"
+                                 Grid.Row="0"
+                                FontSize="13" />
+                  <Label Text="Time :"
+                            VerticalOptions="Center"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            TextColor="#2145A6"
+                            FontSize="13"
+                            FontFamily="{StaticResource Raleway}"/>
+                  <TimePicker x:Name="timeExam"
+                                 Format="T"
+                                 BackgroundColor="Transparent"
+                                 Grid.Column="1"
+                                 VerticalOptions="Center"
+                                 Grid.Row="1"
+                                 FontSize="13" />
+             </Grid>
+             <Grid Margin="5" BackgroundColor="White">
+                 <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="auto"/>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="auto"/>
+                  <ColumnDefinition Width="*"/>
+             </Grid.ColumnDefinitions>
+                 <Label Text="Duration Of The Exam : "
+                        Margin="5"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                        TextColor="#2145A6"
+                        FontSize="13"
+                        FontFamily="{StaticResource Raleway}"/>
+                 <Entry Placeholder="Minutes"
+                        x:Name="Hour"
+                        Keyboard="Numeric"
+                        BackgroundColor="White"
+                        PlaceholderColor="#9A9A9A"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Center"/>
+                 <Label Text="Mark"
+                        Margin="5"
+                    Grid.Column="2"
+                    VerticalOptions="Center"
+                        TextColor="#2145A6"
+                        FontSize="13"
+                        FontFamily="{StaticResource Raleway}"/>
+                 <Entry Placeholder="Mark"
+                        IsEnabled="False"
+                        x:Name="mark"
+                        BackgroundColor="White"
+                        PlaceholderColor="#9A9A9A"
+                        Grid.Column="3"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="Center"/>
+             </Grid>
+             <StackLayout BackgroundColor="White" Margin="5">
+                 <Label Text="Click To Select Questions"
+                        Margin="5"
+                        TextColor="#AAB0B8"
+                        FontSize="11"
+                        FontFamily="{StaticResource Raleway}"/>
+                 <StackLayout Orientation="Horizontal"
+                     
+>
+              <Label Text="Select Questions From Bank"
+                     TextDecorations="Underline"
+                     Margin="5"
+                    
+                     Grid.Column="0"
+                     HorizontalOptions="StartAndExpand"
+                     VerticalOptions="Center"
+                     TextColor="#2145A6"
+                     FontSize="16"
+                     FontFamily="{StaticResource Raleway}"/>
+             <Image Source="error.png"
+                    x:Name="img"
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    WidthRequest="30"
+                    HeightRequest="30"/>
+         </StackLayout>
+                 <StackLayout.GestureRecognizers>
+                           <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                       </StackLayout.GestureRecognizers>
+             </StackLayout>
+
+         </StackLayout>
+ 
+
+
+         <Button Text="Add Exam"
+                 x:Name="saveBut"
+                 BackgroundColor="#2145A6"
+                 TextColor="White"
+                 Padding="30,5,30,5"
+                 CornerRadius="20"
+                 Clicked="Button_Clicked"
+                 AbsoluteLayout.LayoutBounds="0.5,0.97"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+     </AbsoluteLayout>
+</ContentPage> 

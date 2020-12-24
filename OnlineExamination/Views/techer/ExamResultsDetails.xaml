@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineExamination.Views.techer.ExamResultsDetails"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+         <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+         <StackLayout AbsoluteLayout.LayoutBounds="0,0"
+                          HorizontalOptions="FillAndExpand"
+                          AbsoluteLayout.LayoutFlags="PositionProportional"
+                          BackgroundColor="#1E48A6"
+                          Margin="0,0,0,0"
+                          Padding="0">
+              <Grid Padding="5" VerticalOptions="Center">
+                 <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="auto"/>
+                 </Grid.ColumnDefinitions>
+                   <Label Text="Result Of Exam"
+                          Grid.Column="0"
+                          x:Name="qus_Name"
+                          TextColor="#F7F7F7"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          FontFamily="{StaticResource Raleway}"/>
+                  <ImageButton Source="backicon.png"
+                                Grid.Column="1"
+                                HeightRequest="40"
+                                WidthRequest="40"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"
+                                Clicked="ImageButton_Clicked"/>
+
+                  </Grid>
+                 <BoxView HorizontalOptions="FillAndExpand"
+                          BackgroundColor="#F1FAFF"
+                          HeightRequest="0.6"
+                          Margin="0,0,0,0"/>
+         </StackLayout>
+
+             <StackLayout BackgroundColor="Transparent"
+                          AbsoluteLayout.LayoutBounds="0,0.8,1,0.9"
+                          AbsoluteLayout.LayoutFlags="All">
+                 <Grid Margin="5">
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="50*"/>
+                         <ColumnDefinition Width="25*"/>
+                         <ColumnDefinition Width="25*"/>
+                     </Grid.ColumnDefinitions>
+                     <Label Text="Student Name"
+                          Grid.Column="0"
+                          TextColor="#4B7DBF"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Start"
+                          FontFamily="{StaticResource Raleway2}"/>
+                     <Label Text="Result"
+                          Grid.Column="1"
+                          TextColor="#4B7DBF"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          FontFamily="{StaticResource Raleway2}"/>
+                   <Label Text="Status"
+                          Grid.Column="2"
+                          TextColor="#4B7DBF"
+                          FontSize="16"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          FontFamily="{StaticResource Raleway2}"/>
+                 </Grid>
+                 <ScrollView Margin="5">
+                     <StackLayout x:Name="stk">
+
+                     </StackLayout>
+                 </ScrollView>
+             </StackLayout>
+  </AbsoluteLayout>
+</ContentPage>
