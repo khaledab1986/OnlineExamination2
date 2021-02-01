@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 x:Class="OnlineExamination.Views.Admin.UserInfo"
+                 Shell.TabBarIsVisible="False"
+                 BackgroundColor="Transparent">
+        <pages:PopupPage.Animation>
+          <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+        <Frame HorizontalOptions="FillAndExpand"
+               CornerRadius="5"
+               HasShadow="True"
+               BorderColor="White"
+               BackgroundColor="#1E48A6"
+               VerticalOptions="Center"
+               Margin="20,0,20,0">
+            <StackLayout>
+                <Grid>
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                 </Grid.RowDefinitions>
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="auto"/>
+                     <ColumnDefinition Width="*"/>
+                 </Grid.ColumnDefinitions>
+
+                 <Label Text="User Name : "
+                        TextColor="WhiteSmoke"
+                        FontSize="Small"
+                        VerticalOptions="Center"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                 <Entry TextColor="White"
+                        Placeholder="User Name"
+                        PlaceholderColor="Gray"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        FontSize="Medium"
+                        x:Name="user_name"/>
+
+                 <Label Text="PassWord : "
+                        TextColor="WhiteSmoke"
+                        FontSize="Small"
+                        VerticalOptions="Center"
+                        Grid.Column="0"
+                        Grid.Row="1"/>
+                 <Entry TextColor="White"
+                        Placeholder="PassWord"
+                        PlaceholderColor="Gray"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        FontSize="Medium"
+                        x:Name="Pass_Word"/>
+
+                 <Label Text="NickName : "
+                        TextColor="WhiteSmoke"
+                        FontSize="Small"
+                        VerticalOptions="Center"
+                        Grid.Column="0"
+                        Grid.Row="2"/>
+                 <Entry TextColor="White"
+                        Placeholder="NickName"
+                        PlaceholderColor="Gray"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        FontSize="Medium"
+                        x:Name="NickName"/>
+
+
+                 <Label Text="Kind : "
+                        TextColor="WhiteSmoke"
+                        FontSize="Small"
+                        VerticalOptions="Center"
+                        Grid.Column="0"
+                        Grid.Row="3"/>
+                 <Picker x:Name="KindUser"
+                         Grid.Column="1"
+                         Grid.Row="3"
+                         TextColor="White"
+                        Title="Select a Kind User"
+                        BackgroundColor="Transparent"
+                        FontFamily="Arial"
+                        FontSize="Medium"
+                        HorizontalOptions="FillAndExpand"
+                        TitleColor="Gray">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Student</x:String>
+                                <x:String>Teacher</x:String>
+                                <x:String>Admin</x:String>
+                            </x:Array>
+                       </Picker.ItemsSource>
+                </Picker>
+             </Grid>
+
+                <Grid Margin="0,10,0,10"
+                      ColumnSpacing="10">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                         <ColumnDefinition Width="*"/>
+                         <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                   <Button Text="Delete"
+                          IsVisible="false"
+                          Grid.Column="0"
+                          x:Name="del"
+                          BackgroundColor="Red"
+                          TextColor="White"
+                          FontSize="Small"
+                          Clicked="del_Clicked"
+                          CornerRadius="10"/>
+
+                   <Button Text="courses"
+                             IsVisible="false"
+                             Grid.Column="1"
+                              x:Name="courses"
+                              BackgroundColor="Green"
+                              TextColor="White"
+                              FontSize="Small"
+                              Clicked="courses_Clicked"
+                              CornerRadius="10"/>
+
+                   <Button Text="Save"
+                               Grid.Column="2"
+                              x:Name="sav"
+                              BackgroundColor="#F8DF1D"
+                              TextColor="#212121"
+                              FontSize="Small"
+                              Clicked="Button_Clicked"
+                              CornerRadius="10"/>
+
+                </Grid>
+
+            </StackLayout>
+        </Frame>
+ 
+</pages:PopupPage>

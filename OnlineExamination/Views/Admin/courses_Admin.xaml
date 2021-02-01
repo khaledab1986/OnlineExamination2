@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlineExamination.Views.Admin.courses_Admin"
+              Shell.NavBarIsVisible="False"
+             Visual="Material"
+             Shell.TabBarIsVisible="False">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 BackgroundColor="#F7F7F7">
+     <Frame AbsoluteLayout.LayoutBounds="0,0,1,0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#1E48A6"
+            Padding="5"
+            CornerRadius="0"
+            HasShadow="true">
+         <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+             <Image Source="teachericons.png"
+                    Aspect="AspectFit"
+                    IsVisible="false"
+                    VerticalOptions="Center"
+                   HeightRequest="30" />
+             <Label Text=""
+                    x:Name="nickname"
+                    TextColor="#F7F7F7"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    FontFamily="{StaticResource Raleway}"/>
+         </StackLayout>
+     </Frame>
+
+       <ActivityIndicator x:Name="examjson"
+                          IsEnabled="false"
+                          IsVisible="false"
+                          AbsoluteLayout.LayoutBounds="0.5,0.5"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                          BackgroundColor="Transparent"
+                          Color="#1351A6"/>
+       
+
+ 
+
+     <ScrollView AbsoluteLayout.LayoutBounds="0,0.5,1,0.7"
+                 AbsoluteLayout.LayoutFlags="All"
+                 BackgroundColor="Transparent">
+         <StackLayout x:Name="stk" Margin="10">
+      
+         </StackLayout>
+
+
+     </ScrollView>
+         <Button AbsoluteLayout.LayoutBounds="0.5,0.95"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            BackgroundColor="#1351A6"
+                            Clicked="Button_Clicked"
+                            CornerRadius="10"
+                            Padding="10,0,10,0"
+                            BorderColor="White"
+                            BorderWidth="1"
+                            Text="Add New"
+                            FontSize="Medium"
+                            FontFamily="Raleway"
+                            TextColor="White"/>
+
+
+ </AbsoluteLayout>
+
+</ContentPage>
